@@ -1,0 +1,38 @@
+<xml
+  xmlns="http://www.w3.org/1999/xhtml">
+  <block type="onfirstboot" id="onfirstboot" x="37" y="24">
+    <next>
+      <block type="sethostname" id="0^|INqBn3Si4!uv/Zf!9">
+        <field name="1">rpi-kube-slave-01</field>
+        <next>
+          <block type="uartconsole" id="^#7Skk+s,UiXuwDNw-E%">
+            <field name="1">Disable</field>
+            <next>
+              <block type="changesshkeys" id="1D|L/D`~RK3VGb!sOS}1">
+                <next>
+                  <block type="authorizekey" id="%WlU~1.BXt}xGlC*]Slv">
+                    <field name="1">ssh-rsa msabfjkasbfkjasbfkjasfsakjnfas</field>
+                    <field name="2">root</field>
+                    <next>
+                      <block type="ntptimedatectl" id="oXN%6p0?#9R|2T/8T`H9">
+                        <next>
+                          <block type="docker" id="[B0x?fX8JLwos#STw1{O">
+                            <next>
+                              <block type="kubernetes" id="i7~vT|[(B0uPH*|FKyhO">
+                                <field name="1">slave</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
