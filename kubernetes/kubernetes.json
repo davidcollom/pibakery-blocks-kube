@@ -1,0 +1,19 @@
+{
+	"name": "kubernetes",
+	"text": "Install Kubernetes:\\nType: %1\\nRequires internet connection",
+	"script": "kubernetes.sh",
+	"network": true,
+	"continue": true,
+	"type": "software",
+	"category": "software",
+	"shortDescription": "Install kubernetes",
+	"longDescription": "",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"args": [{
+		"type": "menu",
+		"options": ["master", "slave"]
+	}]
+}
