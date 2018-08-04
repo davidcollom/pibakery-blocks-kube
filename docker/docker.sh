@@ -1,7 +1,12 @@
 #!/bin/bash
-set -e
+
 echo "Installing Docker"
 curl -sSL get.docker.com | sh
+
+if [[ $1 != "latest" ]]; then
+    sudo apt-get install -qy --allow-downgrades docker-ce="${1}~ce-0~raspbian"
+fi
+
 
 if uname -a | grep hypriot; then
 os_type=hypriot

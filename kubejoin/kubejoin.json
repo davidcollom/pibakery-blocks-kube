@@ -1,6 +1,6 @@
 {
 	"name": "kubejoin",
-	"text": "Join a Kubernetes Cluster:\\nMaster: %1\\nToken: %2\\nToken Hash: %3",
+	"text": "Join a Kubernetes Cluster:\\nMaster: %1\\nToken: %2\\nToken Hash: %3\\nApplied on Reboot",
 	"script": "kubejoin.sh",
 	"network": true,
 	"continue": true,

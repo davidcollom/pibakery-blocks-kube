@@ -1,6 +1,6 @@
 {
 	"name": "kubernetes",
-	"text": "Install Kubernetes:\\nType: %1\\nRequires internet connection",
+	"text": "Install Kubernetes:\\nType: %1\\nVersion: %2\\nRequires internet connection & Docker",
 	"script": "kubernetes.sh",
 	"network": true,
 	"continue": true,
@@ -12,8 +12,18 @@
 		"raspbian-pibakery.img",
 		"raspbian-lite-pibakery.img"
 	],
-	"args": [{
-		"type": "menu",
-		"options": ["master", "slave"]
-	}]
+	"args": [
+		{
+			"type": "menu",
+			"options": [
+				"master",
+				"slave"
+			]
+		},
+		{
+			"type": "text",
+			"default": "latest",
+			"maxLength": 0
+		}
+	]
 }

@@ -1,6 +1,6 @@
 {
 	"name": "docker",
-	"text": "Install Docker engine on raspberry pi\\nRequires internet connection",
+	"text": "Install Docker engine on raspberry pi\nVersion: %1\\nRequires internet connection",
 	"script": "docker.sh",
 	"network": true,
 	"continue": true,
@@ -12,5 +12,11 @@
 		"raspbian-pibakery.img",
 		"raspbian-lite-pibakery.img"
 	],
-	"args": []
+	"args": [
+		{
+			"type": "text",
+			"default": "latest",
+			"maxLength": 0
+		}
+	]
 }

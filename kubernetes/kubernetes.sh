@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "Installing Kubernetes"
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
@@ -8,15 +7,20 @@ sudo apt-get update -q
 
 echo
 
-sudo apt-get install -qy kubeadm kubectl kubelet
+if [[ $2 != "latest" ]]; then
+  sudo apt-get install --allow-downgrades -qy kubeadm="${2}-00" kubectl="${2}-00" kubelet="${2}-00"
+else
+  sudo apt-get install -qy kubeadm kubectl kubelet
+fi
 
 echo
 
-if [[ "$node_type" == "master" ]]; then
+if [[ "${1}" == "master" ]]; then
   echo "Removing \"KUBELET_NETWORK_ARGS\" from 10-kubeadm.conf"
   sudo sed -i '/KUBELET_NETWORK_ARGS=/d' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
-  exit 0
-elif [[ "$node_type" == "slave" ]]; then
-  exit 0
+  # etcd doesn't like their being a search definition here
+  echo "Removing search domain from /etc/resolv.conf"
+  sudo sed -e 's/^search/#search/' -i /etc/resolv.conf
+
 fi
