@@ -11,6 +11,6 @@
 	"supportedOperatingSystems": [
 		"raspbian-pibakery.img",
 		"raspbian-lite-pibakery.img"
-  ],
-  "args":[]
+	],
+	"args": []
 }
