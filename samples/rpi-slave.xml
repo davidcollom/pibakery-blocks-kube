@@ -1,0 +1,45 @@
+<xml
+    xmlns="http://www.w3.org/1999/xhtml">
+    <block type="onfirstboot" id="onfirstboot" x="-190" y="-133">
+        <next>
+            <block type="sethostname" id="0^|INqBn3Si4!uv/Zf!9">
+                <field name="1">rpi-kube-slave-01</field>
+                <next>
+                    <block type="changesshkeys" id="1D|L/D`~RK3VGb!sOS}1">
+                        <next>
+                            <block type="authorizekey" id="%WlU~1.BXt}xGlC*]Slv">
+                                <field name="1">ssh-rsa sagagsaasgasgadsgakgasnjgahk</field>
+                                <field name="2">pi</field>
+                                <next>
+                                    <block type="ntptimedatectl" id="oXN%6p0?#9R|2T/8T`H9">
+                                        <next>
+                                            <block type="docker" id="VwR6]mDT/_-04|{9GJ]:">
+                                                <field name="1">17.09.0</field>
+                                                <next>
+                                                    <block type="kubernetes" id="!HB1Y8ZRg7.X-W!A}8)}">
+                                                        <field name="1">slave</field>
+                                                        <field name="2">1.9.10</field>
+                                                        <next>
+                                                            <block type="kubejoin" id="sZwQr+g_jP@#dHIw`%[{">
+                                                                <field name="1">XXX.XXX.XXX.XXX:6443</field>
+                                                                <field name="2">sfsalfsa.fgsa.gds.grevntgf4djn.</field>
+                                                                <field name="3">sha256:asgasg32rr3421421r32ffw</field>
+                                                                <next>
+                                                                    <block type="reboot" id="5U%Y#rE[f@Q@}MX|Tje9"></block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>
