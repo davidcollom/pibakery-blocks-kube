@@ -30,16 +30,19 @@ fi
 
 echo
 
-echo "Disabling Swap"
+echo "Disabling Swap.."
 sudo dphys-swapfile swapoff && \
 sudo dphys-swapfile uninstall && \
 sudo update-rc.d dphys-swapfile remove
+echo "Done"
 
-echo "Backing up cmdline.txt to /boot/cmdline_backup.txt"
+echo "Backing up cmdline.txt to /boot/cmdline_backup.txt.."
 sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt
+echo "Done"
 
 echo
 
-echo Adding " cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory " to /boot/cmdline.txt
+echo Adding " cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory " to /boot/cmdline.txt ...
 orig="$(head -n1 /boot/cmdline.txt) cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory"
 echo "$orig" | sudo tee /boot/cmdline.txt
+echo "Done"
