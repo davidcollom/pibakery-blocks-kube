@@ -1,0 +1,22 @@
+{
+	"name": "holdpackage",
+	"text": "Ensure package: %1 is held ",
+	"script": "holdpackage.sh",
+	"network": true,
+	"continue": true,
+	"type": "setting",
+	"category": "setting",
+	"shortDescription": "Ensure package is held",
+	"longDescription": "",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"args": [
+		{
+			"type": "text",
+			"default": "",
+			"maxLength": 0
+		}
+	]
+}

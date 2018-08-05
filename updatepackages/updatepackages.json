@@ -1,0 +1,16 @@
+{
+	"name": "updatepackages",
+	"text": "Ensure ALL packages are updated ",
+	"script": "updatepackages.sh",
+	"network": true,
+	"continue": true,
+	"type": "setting",
+	"category": "setting",
+	"shortDescription": "Ensure ALL packages are updated",
+	"longDescription": "",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"args": []
+}
