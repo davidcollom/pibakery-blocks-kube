@@ -13,6 +13,10 @@ else
   sudo apt-get install -qy kubeadm kubectl kubelet
 fi
 
+echo "Locking kubeadm package..."
+echo "kubeadm hold" | sudo dpkg --set-selections
+echo "Done"
+
 echo
 
 if [[ "${1}" == "master" ]]; then

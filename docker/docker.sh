@@ -7,6 +7,9 @@ if [[ $1 != "latest" ]]; then
     sudo apt-get install -qy --allow-downgrades docker-ce="${1}~ce-0~raspbian"
 fi
 
+echo "Locking docker-ce package..."
+echo "kubeadm hold" | sudo dpkg --set-selections
+echo "Done"
 
 if uname -a | grep hypriot; then
 os_type=hypriot
