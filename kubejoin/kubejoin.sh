@@ -8,7 +8,7 @@ master="${1}"
 token="${1}"
 token_ca="${1}"
 
-echo "Creating SystemD Unit for kubejoin"
+echo "Creating SystemD Unit for kubejoin..."
 cat > /etc/systemd/system/kubejoin.service <<EOF
 [Unit]
 Wants=network-online.target
@@ -23,7 +23,9 @@ ExecStartPost=/bin/systemctl try-restart kubelet.service
 [Install]
 WantedBy=multi-user.target
 EOF
+echo "Done"
 
 systemctl daemon-reload
 echo "Enabling SystemD kubejoin service"
 systemctl enable kubejoin
+echo "Done"
