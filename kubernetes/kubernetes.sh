@@ -15,6 +15,8 @@ fi
 
 echo "Locking kubeadm package..."
 echo "kubeadm hold" | sudo dpkg --set-selections
+echo "kubectl hold" | sudo dpkg --set-selections
+echo "kubelet hold" | sudo dpkg --set-selections
 echo "Done"
 
 echo
