@@ -5,8 +5,8 @@ set -e
 # 2 - Token
 # 3 - Token CA
 master="${1}"
-token="${1}"
-token_ca="${1}"
+token="${2}"
+token_ca="${3}"
 
 echo "Creating SystemD Unit for kubejoin..."
 cat > /etc/systemd/system/kubejoin.service <<EOF
