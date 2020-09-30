@@ -8,7 +8,7 @@ if [[ $1 != "latest" ]]; then
 fi
 
 echo "Locking docker-ce package..."
-echo "kubeadm hold" | sudo dpkg --set-selections
+echo "docker-ce hold" | sudo dpkg --set-selections
 echo "Done"
 
 if uname -a | grep hypriot; then
